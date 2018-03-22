@@ -1,0 +1,85 @@
+rdeteccion de variacion sectores economicos por cheques rechazados y evolucion temporal
+relacionar estos comportamientos con periodos economicos, movimientos politicos etc.
+
+
+TENER EN CUENTA EL ALGORITMO DE POLINOMIOS
+
+CALCULAR EL LIFT DE VARIABLES
+
+relacionar contenidos automaticamente utilizando regex
+
+para extraer data de stock market en python
+
+https://www.backtrader.com/
+
+
+expresar series temporales en descomposicion de variables explicitas vs expresar serie en variables.
+
+cuando no se tienen muchas variables, ver historia de cada variable para obtener o tranformar informacion de la misma mediante analisis de serie de tiempo
+
+clustering de series de tiempo
+https://github.com/alexminnaar/time-series-classification-and-clustering/blob/master/datasets/test.csv
+
+Dynamic Time Warping (DTW)
+
+constante
+ordenada al origen de la tendencia
+pendiente de recta de tendencia
+
+reduccio de variables optimizando informacion de series temporales
+
+area bajo la curva?
+valor qeu represente cambios bajo la curva, derivadas variables bla bla
+
+area bajo la curva
+similitud con funciones especificas, logaritmo, exponencial, constante, cuadratica bla bla bla
+picos, etc, pero de la funcion sacandole estacionalidad y tendencia, ver esa estacionalidad si se puede representar con pocas variables fourier por ejemplo
+
+tener en cuenta como variable los precios del tesoro americano
+
+comparacion de estas metricas con la media de toda la poblacion sana y no sana
+
+
+clusters en base a estos datos para detectar cambios de comportamiento
+
+
+https://tomaugspurger.github.io/modern-7-timeseries.html
+
+http://michaelpaulschramm.com/simple-time-series-trend-analysis/
+
+http://connor-johnson.com/2014/11/23/time-series-forecasting-in-python-and-r/
+
+http://www.johnwittenauer.net/a-simple-time-series-analysis-of-the-sp-500-index/
+
+https://datascience.ibm.com/exchange/public/entry/view/815137c868b916821dec777bdc23013c
+
+https://www.quantinsti.com/blog/starting-time-series/
+
+http://blog.nzrs.net.nz/time-series-analysis-of-nz-activity-data/
+
+https://labs.eleks.com/2016/10/combined-different-methods-create-advanced-time-series-prediction.html
+
+http://datathings.com/blog/post/weatherlux/
+
+https://fxdata.cloud/tutorials/a-guide-for-time-series-visualization-with-python-3
+
+http://www.blackarbs.com/blog/time-series-analysis-in-python-linear-models-to-garch/11/1/2016
+
+http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/
+
+
+----
+
+
+
+
+paginas
+
+http://www.ambito.com/economia/mercados/acciones/?ric=PAM.N&desde=14/01/2017&hasta=14/09/2017&pag=1
+
+http://www.ambito.com/economia/mercados/indices/merval/
+
+http://www.ambito.com/economia/mercados/indices/merval/
+
+
+https://finance.google.com/finance

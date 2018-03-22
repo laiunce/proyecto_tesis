@@ -1,0 +1,947 @@
+<head>
+        <title>Camuzzi Gas Pampeana - Camuzzi Gas del Sur</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <link href="http://fonts.googleapis.com/css?family=Dosis:400,500,600,700,800" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/forms.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="css/uploadify.css">
+
+        <link rel="stylesheet" type="text/css" href="css/gc.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.flexigrid.css">
+
+        <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen">
+        <link rel="stylesheet" href="js/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen">
+        <link rel="stylesheet" href="js/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen">
+
+        <link rel="stylesheet" type="text/css" href="css/directorio.css">
+        <link rel="stylesheet" type="text/css" href="css/scrollableComunicados.css">
+        <link rel="stylesheet" type="text/css" href="css/avanceObras.css">
+        <link rel="stylesheet" type="text/css" href="css/buscadores.css">
+        <link rel="stylesheet" type="text/css" href="css/camuzziExpress.css">
+        <link rel="stylesheet" type="text/css" href="css/comunicadosPrensa.css">
+        <link rel="stylesheet" type="text/css" href="css/comunicacionLinks.css">
+        <link rel="stylesheet" type="text/css" href="css/contactoCamuzzi.css">
+        <link rel="stylesheet" type="text/css" href="css/cotizador.css">
+        <link rel="stylesheet" type="text/css" href="css/decretos.css">
+        <link rel="stylesheet" type="text/css" href="css/forms.css">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/productores.css">
+        <link rel="stylesheet" type="text/css" href="css/trivia.css">
+        <link rel="stylesheet" type="text/css" href="css/prensa.css">
+        <link rel="stylesheet" type="text/css" href="css/voluntarios.css">
+        <link rel="stylesheet" type="text/css" href="css/mapa.css">
+        <link rel="stylesheet" type="text/css" href="css/contratistas.css">
+        <link rel="stylesheet" type="text/css" href="css/pajinate.css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/rrhh.css">
+        <link rel="stylesheet" type="text/css" href="css/gestiones.css">
+        <link rel="stylesheet" type="text/css" href="css/obtencionServicio.css">
+        <link rel="stylesheet" type="text/css" href="css/pagos_online.css">
+        <link rel="stylesheet" type="text/css" href="css/facturaDigital.css">
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/swfobject.js"> </script>
+        <script type="text/javascript" src="js/jquery.uploadify.js"> </script>
+        <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+        <script type="text/javascript" src="js/jquery.pajinate.js"></script>
+        <script type="text/javascript" src="js/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="js/jquery.dcverticalmegamenu.js"></script>
+
+        <!-- GC-->
+        <script type="text/javascript" src="js/gc.js"></script>
+        <script type="text/javascript" src="js/highcharts.js"></script>
+        <script type="text/javascript" src="js/highcharts.theme.camuzzi.js"></script>
+        <script type="text/javascript" src="js/jquery.flexigrid.js"></script>
+
+        <!-- RRHH -->
+        <script type="text/javascript" src="js/rrhh/functions.js"></script>
+        <script type="text/javascript" src="js/rrhh/sorttable/packed.js"></script>
+
+        <link rel="stylesheet" type="text/css" media="all" href="js/rrhh/sorttable/style.css">
+
+        <!-- Add fancyBox -->
+        <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js?v=2.1.4"></script>
+        <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+        <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+        <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+        <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+
+        <!--<script type="text/javascript" src="js/formdata.js"></script>-->
+
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                var section='nuevos-cuadros-tarifarios';
+
+                var items_per_page = (section == "info-contratistas") ? 30 : 15;
+
+                $('#page_container').pajinate({
+                    items_per_page : items_per_page,
+                    nav_label_first : '<<',
+                    nav_label_last : '>>',
+                    nav_label_prev : '<',
+                    nav_label_next : '>'
+                });
+
+                $('#ulMenu').dcVerticalMegaMenu();
+
+                $(".scrollable").scrollable();
+
+                $(".banners").scrollable({circular: true, mousewheel: true}).navigator().autoscroll({
+                    interval: 30000
+                });
+
+                $(".fancybox").fancybox();
+
+                $(".image_popup").fancybox({
+                    beforeShow : function()
+                    {
+                        var link = $(this.element).data("link");
+                        var extra = $(this.element).data("extra");
+
+                        if(typeof link == "string") this.title = "<a href='" + link + "' target='_blank' style='color: white;'>" + this.title + "</a>";
+
+                        if(typeof link == "string" && extra != "") this.title += " - <a href='" + extra + "' target='_blank' style='color: white;'>Descargar logo</a>";
+                    }
+                });
+
+                comboProvincias();
+
+               /* if(section=='home')
+                {
+                    openEncuesta();
+                }*/
+
+                $(".flash_content").each(function()
+                {
+                    var flashvars = ($(this).data("flashvars") == "") ? {} : $(this).data("flashvars");
+                    var params = {};
+                    var attributes = {};
+
+                    params.wmode = "transparent";
+
+                    swfobject.embedSWF($(this).data("src"), $(this).attr("id"), $(this).data("width"), $(this).data("height"), "9.0.0", false, flashvars, params, attributes);
+                });
+            });
+        </script>
+    </head>
+    <body id="nuevos-cuadros-tarifarios">
+        <div id="sectionMain">
+            <div id="sectionHeader">
+                <div id="sectionLogo">
+                    <a href="/"><img src="img/logo.gif" alt=""></a>
+                </div>
+
+                <div id="sectionPhone">
+                <div class="emergencia">
+                    <h1>EMERGENCIAS</h1>
+                    <p>Las 24hs, los 365 días.</p>
+                </div><br>
+                <img src="img/icons/alarm.png" alt="">
+                    <p class="rayita">Camuzzi Gas Pampeana
+                    <br><span class="phone_number">0810-666-0810</span><br>
+                    <span class="phone_number">0800-666-0810</span>
+                    </p>
+
+                    <p>Camuzzi Gas del Sur
+                    <br><span class="phone_number">0810-999-0810</span><br>
+                    <span class="phone_number">0800-999-0810</span>
+                    </p>
+                </div>
+                <div id="fontButtons">
+                    <a href="mapa-de-sitio.php"><img src="img/mapa_de_sitio.jpg" alt=""></a>
+                    <a onclick="fuente(0)"><img src="img/texto_menos.gif" alt=""></a>
+                    <a onclick="fuente(1)"><img src="img/texto_mas.gif" alt=""></a>
+                </div>
+            </div>
+            <div id="sectionBody">
+                        <div id="sectionMenu">
+            <div>
+            <ul id="ulMenu" class="mega-menu right">
+                <li>
+                    <a href="index">Inicio</a>
+                </li>
+                <li id="1" class="dc-mega-li">
+                    <a href="#" class="dc-mega">Usuarios<span class="dc-mega-icon"></span></a>
+                    <div class="sub-container mega" style="height: 333px; margin-top: -120px; z-index: 1000; width: 567px; display: none;"><ul class="sub">
+
+                           <div class="row last first" style="width: 567px;"><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Sobre el servicio</a>
+                            <ul>
+                                <li><a href="servicio-al-cliente">Bienvenido</a></li>
+                                <li><a href="sobre-el-servicio-obtencion-del-servicio">Obtención del servicio</a></li>
+                                <li><a href="sobre-el-servicio-alta-de-servicio">Alta del servicio</a></li>
+                                <li><a href="sobre-el-servicio-baja-de-servicio">Baja del servicio</a></li>
+                                <li><a href="sobre-el-servicio-reconexion-de-servicio">Reconexión del servicio</a></li>
+                                <li><a href="servicio-al-cliente-gasistas-matriculados">Gasistas matriculados</a></li>
+
+                                <li><a href="servicio-al-cliente-reglamento-del-servicio">Reglamento del servicio</a></li>
+                                <li><a href="servicio-al-cliente-tarifas-vigentes">Tarifas vigentes</a></li>
+                                <li><a href="servicio-al-cliente-preguntas-frecuentes">Preguntas frecuentes</a></li>
+                                <!--<li><a href="documentos/que-hacer-frente-a-una-emergencia-o-ante-la-falta-de-suministro.pdf">¿Qué hacer frente a una <br/>emergencia o ante la falta<br/> de suministro?</a></li>-->
+                                <li><a href="servicio-al-cliente-manual-emergencia">Manual de la Emergencia</a></li>
+                            </ul>
+
+                          <a href="#" class="second mega-hdr-a" style="height: 16px;">Gestiones online</a>
+                            <ul>
+                                <li><a href="gestiones-online">Realice su trámite aquí</a>
+                                </li><li><a href="factura-digital">Factura Digital</a>
+                            </li></ul>
+
+                        </li><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Gestión comercial</a>
+                            <ul>
+                                <li><a href="gestion-comercial-conozca-su-factura">Conozca su factura</a></li>
+                                <li><a href="gestion-comercial-formas-de-pago">Formas de pago</a></li>
+                                <li><a href="gestion-comercial-pagos-online">Formas de pago electrónico</a></li>
+                                <li><a href="gestion-comercial-lugares-de-pago">Lugares habilitados para el pago</a></li>
+                                <li><a href="gestion-comercial-debito-automatico">Débito automático</a></li>
+                                <li><a href="gestion-comercial-oficinas-comerciales">Oficinas comerciales</a></li>
+                                <li><a href="gestion-comercial-cambio-direccion-postal">Cambio de dirección postal</a>
+                                </li><li><a href="gestion-comercial-cambio-situacion-impositiva">Cambio de situación impositiva</a></li>
+                                <li><a href="gestion-comercial-cambio-de-titularidad">Cambio de titularidad</a></li>
+                            </ul>
+
+
+                            <a href="#" class="second mega-hdr-a" style="height: 16px;">Categoría de clientes</a>
+                            <ul>
+                                <li><a href="servicio-al-cliente-clientes-residenciales">Clientes residenciales</a></li>
+                                <li><a href="servicio-al-cliente-clientes-comerciales">Clientes comerciales</a></li>
+                                <li><a href="servicio-al-cliente-grandes-clientes">Grandes clientes</a></li>
+                            </ul>
+
+                        </li><li class="mega-unit mega-hdr last">
+                            <a href="gnc" class="mega-hdr-a" style="height: 16px;">GNC</a>
+                            <ul>
+                                <li><a href="gnc">¿Qué es el GNC vehicular? </a></li>
+                                <li><a href="gnc-ventajas-del-gnc">Ventajas del GNC</a></li>
+                                <li><a href="gnc-mapa">Mapa del GNC</a></li>
+                                <li><a href="gnc-normas-tecnicas">Normas técnicas</a></li>
+                                <li><a href="gnc-cotizador">Cotizador</a></li>
+
+                                <li><a href="gnc-links-de-interes">Links de interés</a></li>
+                            </ul>
+
+                            <a href="#" class="second mega-hdr-a" style="height: 16px;">Grandes Clientes</a>
+                            <ul>
+                                <li><a href="grandes-clientes">Consumos diarios</a>
+                                </li><li><a href="informacion-para-productores">Info Productores</a></li>
+                            </ul>
+
+                            <a href="#" class="second mega-hdr-a" style="height: 16px;">Simulador de consumo</a>
+                            <ul>
+                                <li><a href="simulador-de-consumo">Herramienta interactiva</a>
+                            </li></ul>
+
+                        </li></div>
+
+                        
+
+                         
+
+
+
+                    </ul></div>
+                </li>
+                <li id="2" class="dc-mega-li">
+
+
+                    <a href="#" class="dc-mega">Seguridad y Prevención<span class="dc-mega-icon"></span></a>
+                    <div class="sub-container mega" style="height: 226px; margin-top: -180px; z-index: 1000; width: 567px; display: none;"><ul class="sub">
+                     <div class="row last first" style="width: 567px;"><li class="mega-unit mega-hdr">
+
+                     <a href="#" class="mega-hdr-a" style="height: 32px;">GESTIÓN INTEGRADA</a>
+                    <ul>
+                        <li><a href="seguridad-y-medio-ambiente">Sistema integrado de <br>gestión de Seguridad <br>y Medio Ambiente</a></li>
+                    </ul>
+
+                            <a href="#" class="mega-hdr-a" style="height: 32px;">CAMPAÑAS</a>
+                            <ul>
+                                <li><a href="comunidad-a-prender-el-gas">A prender el Gas</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-no-corras-riesgos">No COrras riesgos</a></li>
+                               <!-- <li><a href="#">Monóxido en el verano</a></li>-->
+                               <li><a href="seguridad-y-medio-ambiente-uso-racional">Uso racional</a></li>
+                               <li><a href="seguridad-y-medio-ambiente-plan-de-prevencion">PPD</a></li>
+                            </ul>
+
+                        </li><li id="centLeft" class="mega-unit mega-hdr">
+                          <a href="#" class="mega-hdr-a" style="height: 32px;">Seguridad <br>y Medio Ambiente</a>
+
+                            <ul>
+                                <li><a href="seguridad-y-medio-ambiente-nuestro-compromiso">Nuestro compromiso con <br>el Medio Ambiente</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-politica-de-medio-ambiente">Política de Medio Ambiente</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-energia-limpia">Energía limpia</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-politica-de-higiene">Política de Seguridad</a></li>
+
+                                <li><a href="seguridad-y-medio-ambiente-en-las-operaciones">Seguridad en las operaciones</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-ocupacional">Seguridad ocupacional</a></li>
+
+                            </ul>
+
+
+                        </li><li class="mega-unit mega-hdr last">
+                            <!--<a href="#">Uso Seguro del Gas Natural</a>
+                           <ul>
+                                <li><a href="#">Link a confirmar</a></li>
+                           </ul>-->
+                            <a href="#" class="mega-hdr-a" style="height: 32px;">Consejos útiles</a>
+                            <ul>
+                                <li><a href="seguridad-y-medio-ambiente-prefiera-gas-natural">Prefiera el gas natural</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-revisar-artefactos">Haga revisar sus artefactos</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-primeros-auxilios">Primeros auxilios</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-identifique-posibles-perdidas">Identifique posibles<br>pérdidas de gas</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-evite-acumulacion-monoxido">Evitar generación y acumulación<br>de Monóxido de Carbono</a></li>
+                            </ul>
+
+                        </li></div>
+
+                         
+
+
+
+                        
+
+                    </ul></div>
+                </li>
+                <li id="3" class="dc-mega-li">
+                    <a href="#" class="dc-mega">La Empresa<span class="dc-mega-icon"></span></a>
+                    <div class="sub-container mega" style="height: 208px; margin-top: -240px; z-index: 1000; width: 567px; display: none;"><ul class="sub">
+                        <div class="row last first" style="width: 567px;"><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Perfil Corporativo</a>
+                            <ul>
+                                <li><a href="perfil-corporativo">Sobre Camuzzi</a></li>
+                                <li><a href="#">Accionistas</a></li>
+                                <li><a href="#">Directorio</a></li>
+                                <li><a href="perfil-corporativo-nuestra-industria">Nuestra industria</a></li>
+                                <li><a href="perfil-corporativo-historia-del-gas-natural">Historia del Gas Natural</a></li>
+                            </ul>
+
+
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Recursos Humanos</a>
+                            <ul>
+                                <li><a href="recursos-humanos">Bienvenido</a></li>
+                                <li><a href="recursos-humanos-ingreso">Forme parte de nuestro equipo</a></li>
+                            </ul>
+
+                        </li><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Relación con Inversores</a>
+
+                            <ul>
+
+                                <li><a href="relacion-con-inversores-informacion-economica">Info económica financiera</a></li>
+                                <li><a href="relacion-con-inversores-estados-contables.php">Memorias y Estados Contables</a></li>
+                                <li><a href="relacion-con-inversores-cotizaciones">Cotizaciones</a></li>
+                                <li><a href="relacion-con-inversores-preguntas">Preguntas Frecuentes</a></li>
+                                <li><a href="relacion-con-inversores-contactos">Contáctenos</a></li>
+                            </ul>
+
+
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Camuzzi y la Comunidad</a>
+                            <ul>
+                                <li><a href="comunidad">Nuestro compromiso</a></li>
+                                <!--<li><a href="comunidad-programa-de-voluntarios">Programa Voluntarios de Camuzzi</a></li>
+                                <li><a href="comunidad-jornada-prevencion">Jornadas de prevención</a></li>
+                                <li><a href="comunidad-campania-de-reciclaje">Campañas de reciclaje</a></li>-->
+                            </ul>
+
+                        </li><li class="mega-unit mega-hdr last">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Comunicación y Prensa</a>
+                            <ul>
+                                <li><a href="comunicacion-y-prensa-comunicados">Comunicados</a></li>
+                                <li><a href="comunicacion-y-prensa-documentos.php">Documentos de interés</a></li>
+                                <li><a href="comunicacion-y-prensa-medios">Imágenes y medios</a></li>
+                                <li><a href="comunicacion-y-prensa-links">Links de interés</a></li>
+                                <li><a href="comunicacion-y-prensa-contactenos">Contáctenos</a></li>
+                            </ul>
+
+
+                            <a href="comunidad" class="mega-hdr-a" style="height: 16px;">Obras</a>
+                            <ul>
+                                <li><a href="concurso-de-obras">Concurso de Obras</a></li>
+                                <li><a href="info-contratistas">Info Contratistas</a></li>
+                            </ul>
+
+                        </li></div>
+
+                        
+
+                        
+
+
+                    </ul></div>
+                </li>
+
+            </ul>
+
+            </div>
+
+            <div id="atencion">
+
+                <p>ATENCIÓN AL CLIENTE</p>
+
+                0810-555-3698
+
+            </div>
+                <a href="http://camuzzigas.com/seguridad-y-medio-ambiente-no-corras-riesgos" class="Menubanner"><img src="img/home_banners/no-COrras-riesgos.jpg" border="0"></a>
+
+                <a href="http://www.jus.gob.ar/datos-personales.aspx/" target="_blank" class="Menubanner"><img src="img/home_banners/banner_PDP_small.jpg" border="0"></a>
+
+                <a href="http://www.camuzzigas.com/notificacion-judicial-recibida" target="_blank" class="Menubanner"><img src="img/home_banners/notificacion_judicial.png" border="0"></a>
+        </div>
+                <div id="sectionContent">
+                    <div class="banner"><img src="img/banners/nuevos-cuadros-tarifarios.jpg" alt="banner"></div>                    <div class="text">
+<h1>Nuevos cuadros tarifarios</h1>
+<br>
+	<!--div class="grey_box">Estamos actualizando la sección</div-->
+
+<p>Desde el 1° abril de 2017 rigen nuevos valores tarifarios para usuarios residenciales, comerciales, PyMEs y estaciones de GNC de todo el país.</p>
+
+<p style="line-height: 20px">
+<strong>Para ver los cuadros tarifarios vigentes, haga <a href="servicio-al-cliente-tarifas-vigentes.php" target="_blank">click aquí</a>.</strong>
+</p>
+
+<br>
+
+<h1>Bonificación por ahorro y límites de consumo</h1>
+<p>La normativa dispone incentivos al ahorro con el fin de realizar un consumo responsable del gas natural. Así, todos los usuarios que reduzcan en un 15% o más su consumo con respecto al mismo período del año 2015 tendrán una significativa reducción en el precio del m3 de gas. Una disminución del consumo podrá significar también la recategorización del usuario, por lo que incluso podrá percibir valores inferiores a los de su categoría actual. La categoría de un usuario es definida por sus niveles de consumo anual, medidos a lo largo de 6 bimestres móviles.</p>
+
+<p><strong>Estas son las bonificaciones vigentes:</strong></p>
+<ul>
+	<li style="word-spacing: -2px">Descuento del 50% en el precio del m<sup>3</sup> para los usuarios de las categorías R1 a R2-3</li>
+	<li style="word-spacing: -2px">Descuento del 30% en el precio del m<sup>3</sup> para los usuarios de las categorías R3-1 a R3-3</li>
+	<li style="word-spacing: -2px">Descuento del 20% en el precio del m<sup>3</sup> de gas para los usuarios de la categoría R3-4</li>
+</ul>
+
+<p style="line-height: 20px">
+<strong>Para conocer cuáles son las categorías de clientes, haga <a href="servicio-al-cliente-clientes-residenciales.php" target="_blank">click aquí</a>.</strong><br>
+<strong>Si no sabe qué tipo de cliente es Ud., conozca su factura haciendo <a href="gestion-comercial-conozca-su-factura.php" target="_blank">click aquí</a>.</strong><br>
+<strong>Para saber cómo hacer un uso responsable del gas natural, haga <a href="http://camuzzigas.com/seguridad-y-medio-ambiente-uso-racional" target="_blank">click aquí</a>.</strong>
+</p>
+
+<p>Es importante destacar que continúan vigentes los topes de incremento sobre las facturas a emitirse por los consumos realizados a partir de la entrada en vigencia de estos nuevos valores tarifarios. En este marco, se ha dispuesto que el monto total -impuestos incluidos- de las facturas a emitirse a partir del 1º de abril, no podrá superar el monto máximo que resulte de aplicar los porcentajes que seguidamente se detallan, a la factura con impuestos incluidos emitida al mismo usuario y en igual período del año anterior. Dichos topes son:</p>
+
+<ul>
+	<li>Usuarios R1, R21, R22 y R23: 300%</li>
+	<li>Usuarios R31 R32 y R33: 350%</li>
+	<li>Usuarios R34: 400%</li>
+	<li>Usuarios SGP: 500%</li>
+</ul>
+
+<p>Los topes de incremento sobre los montos finales facturados se aplicarán siempre que el monto total de la factura supere la suma de doscientos cincuenta pesos ($250).</p>
+
+<br>
+
+<h1>Opción de pago mensual</h1>
+<p>En cumplimiento a lo dispuesto por el ENARGAS y el Ministerio de Energía y Minería de la Nación, para el cobro de las facturas de servicio emitidas en forma bimestral, se ha posibilitado la opción de pago mensual de las mismas, mediante la incorporación de 2 cupones de pago equivalentes cada uno de ellos al 50% del importe total de la factura, con fechas de vencimientos distantes 30 días uno de otro.</p>
+
+<br><br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="sectionFooter">
+            <a href="http://qr.afip.gob.ar/?qr=OoUHa7TWCRFBVOtEvWDGhw,," target="_F960AFIPInfo" class="qr">
+                <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="50">
+                <br>Camuzzi Gas<br>Pampeana</a>
+
+        <a class="qr" href="http://qr.afip.gob.ar/?qr=qJNPXHJkqfoK8z6YSRg7Lg,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="50"><br>Camuzzi Gas<br>del Sur</a>
+            <span>Av. Alicia Moreau de Justo 240 piso 3<br>C1107AAF - Buenos Aires - Argentina <br>Tel. 54-11-5776-7000 - Fax. 54-11-5776-7140</span>
+            <img src="img/logo_footer.gif" alt="Camuzzi Gas Pampeana - Camuzzi Gas del Sur">
+        </div>
+    
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        try
+        {
+            var pageTracker = _gat._getTracker("UA-9551836-9");
+            pageTracker._trackPageview();
+        }
+        catch(err) {}
+    </script>
+
+</body><head>
+        <title>Camuzzi Gas Pampeana - Camuzzi Gas del Sur</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <link href="http://fonts.googleapis.com/css?family=Dosis:400,500,600,700,800" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/forms.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="css/uploadify.css">
+
+        <link rel="stylesheet" type="text/css" href="css/gc.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.flexigrid.css">
+
+        <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen">
+        <link rel="stylesheet" href="js/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen">
+        <link rel="stylesheet" href="js/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen">
+
+        <link rel="stylesheet" type="text/css" href="css/directorio.css">
+        <link rel="stylesheet" type="text/css" href="css/scrollableComunicados.css">
+        <link rel="stylesheet" type="text/css" href="css/avanceObras.css">
+        <link rel="stylesheet" type="text/css" href="css/buscadores.css">
+        <link rel="stylesheet" type="text/css" href="css/camuzziExpress.css">
+        <link rel="stylesheet" type="text/css" href="css/comunicadosPrensa.css">
+        <link rel="stylesheet" type="text/css" href="css/comunicacionLinks.css">
+        <link rel="stylesheet" type="text/css" href="css/contactoCamuzzi.css">
+        <link rel="stylesheet" type="text/css" href="css/cotizador.css">
+        <link rel="stylesheet" type="text/css" href="css/decretos.css">
+        <link rel="stylesheet" type="text/css" href="css/forms.css">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/productores.css">
+        <link rel="stylesheet" type="text/css" href="css/trivia.css">
+        <link rel="stylesheet" type="text/css" href="css/prensa.css">
+        <link rel="stylesheet" type="text/css" href="css/voluntarios.css">
+        <link rel="stylesheet" type="text/css" href="css/mapa.css">
+        <link rel="stylesheet" type="text/css" href="css/contratistas.css">
+        <link rel="stylesheet" type="text/css" href="css/pajinate.css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/rrhh.css">
+        <link rel="stylesheet" type="text/css" href="css/gestiones.css">
+        <link rel="stylesheet" type="text/css" href="css/obtencionServicio.css">
+        <link rel="stylesheet" type="text/css" href="css/pagos_online.css">
+        <link rel="stylesheet" type="text/css" href="css/facturaDigital.css">
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/swfobject.js"> </script>
+        <script type="text/javascript" src="js/jquery.uploadify.js"> </script>
+        <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+        <script type="text/javascript" src="js/jquery.pajinate.js"></script>
+        <script type="text/javascript" src="js/jquery.hoverIntent.js"></script>
+        <script type="text/javascript" src="js/jquery.dcverticalmegamenu.js"></script>
+
+        <!-- GC-->
+        <script type="text/javascript" src="js/gc.js"></script>
+        <script type="text/javascript" src="js/highcharts.js"></script>
+        <script type="text/javascript" src="js/highcharts.theme.camuzzi.js"></script>
+        <script type="text/javascript" src="js/jquery.flexigrid.js"></script>
+
+        <!-- RRHH -->
+        <script type="text/javascript" src="js/rrhh/functions.js"></script>
+        <script type="text/javascript" src="js/rrhh/sorttable/packed.js"></script>
+
+        <link rel="stylesheet" type="text/css" media="all" href="js/rrhh/sorttable/style.css">
+
+        <!-- Add fancyBox -->
+        <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js?v=2.1.4"></script>
+        <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+        <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+        <script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+        <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+
+        <!--<script type="text/javascript" src="js/formdata.js"></script>-->
+
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                var section='nuevos-cuadros-tarifarios';
+
+                var items_per_page = (section == "info-contratistas") ? 30 : 15;
+
+                $('#page_container').pajinate({
+                    items_per_page : items_per_page,
+                    nav_label_first : '<<',
+                    nav_label_last : '>>',
+                    nav_label_prev : '<',
+                    nav_label_next : '>'
+                });
+
+                $('#ulMenu').dcVerticalMegaMenu();
+
+                $(".scrollable").scrollable();
+
+                $(".banners").scrollable({circular: true, mousewheel: true}).navigator().autoscroll({
+                    interval: 30000
+                });
+
+                $(".fancybox").fancybox();
+
+                $(".image_popup").fancybox({
+                    beforeShow : function()
+                    {
+                        var link = $(this.element).data("link");
+                        var extra = $(this.element).data("extra");
+
+                        if(typeof link == "string") this.title = "<a href='" + link + "' target='_blank' style='color: white;'>" + this.title + "</a>";
+
+                        if(typeof link == "string" && extra != "") this.title += " - <a href='" + extra + "' target='_blank' style='color: white;'>Descargar logo</a>";
+                    }
+                });
+
+                comboProvincias();
+
+               /* if(section=='home')
+                {
+                    openEncuesta();
+                }*/
+
+                $(".flash_content").each(function()
+                {
+                    var flashvars = ($(this).data("flashvars") == "") ? {} : $(this).data("flashvars");
+                    var params = {};
+                    var attributes = {};
+
+                    params.wmode = "transparent";
+
+                    swfobject.embedSWF($(this).data("src"), $(this).attr("id"), $(this).data("width"), $(this).data("height"), "9.0.0", false, flashvars, params, attributes);
+                });
+            });
+        </script>
+    </head>
+    <body id="nuevos-cuadros-tarifarios">
+        <div id="sectionMain">
+            <div id="sectionHeader">
+                <div id="sectionLogo">
+                    <a href="/"><img src="img/logo.gif" alt=""></a>
+                </div>
+
+                <div id="sectionPhone">
+                <div class="emergencia">
+                    <h1>EMERGENCIAS</h1>
+                    <p>Las 24hs, los 365 días.</p>
+                </div><br>
+                <img src="img/icons/alarm.png" alt="">
+                    <p class="rayita">Camuzzi Gas Pampeana
+                    <br><span class="phone_number">0810-666-0810</span><br>
+                    <span class="phone_number">0800-666-0810</span>
+                    </p>
+
+                    <p>Camuzzi Gas del Sur
+                    <br><span class="phone_number">0810-999-0810</span><br>
+                    <span class="phone_number">0800-999-0810</span>
+                    </p>
+                </div>
+                <div id="fontButtons">
+                    <a href="mapa-de-sitio.php"><img src="img/mapa_de_sitio.jpg" alt=""></a>
+                    <a onclick="fuente(0)"><img src="img/texto_menos.gif" alt=""></a>
+                    <a onclick="fuente(1)"><img src="img/texto_mas.gif" alt=""></a>
+                </div>
+            </div>
+            <div id="sectionBody">
+                        <div id="sectionMenu">
+            <div>
+            <ul id="ulMenu" class="mega-menu right">
+                <li>
+                    <a href="index">Inicio</a>
+                </li>
+                <li id="1" class="dc-mega-li">
+                    <a href="#" class="dc-mega">Usuarios<span class="dc-mega-icon"></span></a>
+                    <div class="sub-container mega" style="height: 333px; margin-top: -120px; z-index: 1000; width: 567px; display: none;"><ul class="sub">
+
+                           <div class="row last first" style="width: 567px;"><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Sobre el servicio</a>
+                            <ul>
+                                <li><a href="servicio-al-cliente">Bienvenido</a></li>
+                                <li><a href="sobre-el-servicio-obtencion-del-servicio">Obtención del servicio</a></li>
+                                <li><a href="sobre-el-servicio-alta-de-servicio">Alta del servicio</a></li>
+                                <li><a href="sobre-el-servicio-baja-de-servicio">Baja del servicio</a></li>
+                                <li><a href="sobre-el-servicio-reconexion-de-servicio">Reconexión del servicio</a></li>
+                                <li><a href="servicio-al-cliente-gasistas-matriculados">Gasistas matriculados</a></li>
+
+                                <li><a href="servicio-al-cliente-reglamento-del-servicio">Reglamento del servicio</a></li>
+                                <li><a href="servicio-al-cliente-tarifas-vigentes">Tarifas vigentes</a></li>
+                                <li><a href="servicio-al-cliente-preguntas-frecuentes">Preguntas frecuentes</a></li>
+                                <!--<li><a href="documentos/que-hacer-frente-a-una-emergencia-o-ante-la-falta-de-suministro.pdf">¿Qué hacer frente a una <br/>emergencia o ante la falta<br/> de suministro?</a></li>-->
+                                <li><a href="servicio-al-cliente-manual-emergencia">Manual de la Emergencia</a></li>
+                            </ul>
+
+                          <a href="#" class="second mega-hdr-a" style="height: 16px;">Gestiones online</a>
+                            <ul>
+                                <li><a href="gestiones-online">Realice su trámite aquí</a>
+                                </li><li><a href="factura-digital">Factura Digital</a>
+                            </li></ul>
+
+                        </li><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Gestión comercial</a>
+                            <ul>
+                                <li><a href="gestion-comercial-conozca-su-factura">Conozca su factura</a></li>
+                                <li><a href="gestion-comercial-formas-de-pago">Formas de pago</a></li>
+                                <li><a href="gestion-comercial-pagos-online">Formas de pago electrónico</a></li>
+                                <li><a href="gestion-comercial-lugares-de-pago">Lugares habilitados para el pago</a></li>
+                                <li><a href="gestion-comercial-debito-automatico">Débito automático</a></li>
+                                <li><a href="gestion-comercial-oficinas-comerciales">Oficinas comerciales</a></li>
+                                <li><a href="gestion-comercial-cambio-direccion-postal">Cambio de dirección postal</a>
+                                </li><li><a href="gestion-comercial-cambio-situacion-impositiva">Cambio de situación impositiva</a></li>
+                                <li><a href="gestion-comercial-cambio-de-titularidad">Cambio de titularidad</a></li>
+                            </ul>
+
+
+                            <a href="#" class="second mega-hdr-a" style="height: 16px;">Categoría de clientes</a>
+                            <ul>
+                                <li><a href="servicio-al-cliente-clientes-residenciales">Clientes residenciales</a></li>
+                                <li><a href="servicio-al-cliente-clientes-comerciales">Clientes comerciales</a></li>
+                                <li><a href="servicio-al-cliente-grandes-clientes">Grandes clientes</a></li>
+                            </ul>
+
+                        </li><li class="mega-unit mega-hdr last">
+                            <a href="gnc" class="mega-hdr-a" style="height: 16px;">GNC</a>
+                            <ul>
+                                <li><a href="gnc">¿Qué es el GNC vehicular? </a></li>
+                                <li><a href="gnc-ventajas-del-gnc">Ventajas del GNC</a></li>
+                                <li><a href="gnc-mapa">Mapa del GNC</a></li>
+                                <li><a href="gnc-normas-tecnicas">Normas técnicas</a></li>
+                                <li><a href="gnc-cotizador">Cotizador</a></li>
+
+                                <li><a href="gnc-links-de-interes">Links de interés</a></li>
+                            </ul>
+
+                            <a href="#" class="second mega-hdr-a" style="height: 16px;">Grandes Clientes</a>
+                            <ul>
+                                <li><a href="grandes-clientes">Consumos diarios</a>
+                                </li><li><a href="informacion-para-productores">Info Productores</a></li>
+                            </ul>
+
+                            <a href="#" class="second mega-hdr-a" style="height: 16px;">Simulador de consumo</a>
+                            <ul>
+                                <li><a href="simulador-de-consumo">Herramienta interactiva</a>
+                            </li></ul>
+
+                        </li></div>
+
+                        
+
+                         
+
+
+
+                    </ul></div>
+                </li>
+                <li id="2" class="dc-mega-li">
+
+
+                    <a href="#" class="dc-mega">Seguridad y Prevención<span class="dc-mega-icon"></span></a>
+                    <div class="sub-container mega" style="height: 226px; margin-top: -180px; z-index: 1000; width: 567px; display: none;"><ul class="sub">
+                     <div class="row last first" style="width: 567px;"><li class="mega-unit mega-hdr">
+
+                     <a href="#" class="mega-hdr-a" style="height: 32px;">GESTIÓN INTEGRADA</a>
+                    <ul>
+                        <li><a href="seguridad-y-medio-ambiente">Sistema integrado de <br>gestión de Seguridad <br>y Medio Ambiente</a></li>
+                    </ul>
+
+                            <a href="#" class="mega-hdr-a" style="height: 32px;">CAMPAÑAS</a>
+                            <ul>
+                                <li><a href="comunidad-a-prender-el-gas">A prender el Gas</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-no-corras-riesgos">No COrras riesgos</a></li>
+                               <!-- <li><a href="#">Monóxido en el verano</a></li>-->
+                               <li><a href="seguridad-y-medio-ambiente-uso-racional">Uso racional</a></li>
+                               <li><a href="seguridad-y-medio-ambiente-plan-de-prevencion">PPD</a></li>
+                            </ul>
+
+                        </li><li id="centLeft" class="mega-unit mega-hdr">
+                          <a href="#" class="mega-hdr-a" style="height: 32px;">Seguridad <br>y Medio Ambiente</a>
+
+                            <ul>
+                                <li><a href="seguridad-y-medio-ambiente-nuestro-compromiso">Nuestro compromiso con <br>el Medio Ambiente</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-politica-de-medio-ambiente">Política de Medio Ambiente</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-energia-limpia">Energía limpia</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-politica-de-higiene">Política de Seguridad</a></li>
+
+                                <li><a href="seguridad-y-medio-ambiente-en-las-operaciones">Seguridad en las operaciones</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-ocupacional">Seguridad ocupacional</a></li>
+
+                            </ul>
+
+
+                        </li><li class="mega-unit mega-hdr last">
+                            <!--<a href="#">Uso Seguro del Gas Natural</a>
+                           <ul>
+                                <li><a href="#">Link a confirmar</a></li>
+                           </ul>-->
+                            <a href="#" class="mega-hdr-a" style="height: 32px;">Consejos útiles</a>
+                            <ul>
+                                <li><a href="seguridad-y-medio-ambiente-prefiera-gas-natural">Prefiera el gas natural</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-revisar-artefactos">Haga revisar sus artefactos</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-primeros-auxilios">Primeros auxilios</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-identifique-posibles-perdidas">Identifique posibles<br>pérdidas de gas</a></li>
+                                <li><a href="seguridad-y-medio-ambiente-evite-acumulacion-monoxido">Evitar generación y acumulación<br>de Monóxido de Carbono</a></li>
+                            </ul>
+
+                        </li></div>
+
+                         
+
+
+
+                        
+
+                    </ul></div>
+                </li>
+                <li id="3" class="dc-mega-li">
+                    <a href="#" class="dc-mega">La Empresa<span class="dc-mega-icon"></span></a>
+                    <div class="sub-container mega" style="height: 208px; margin-top: -240px; z-index: 1000; width: 567px; display: none;"><ul class="sub">
+                        <div class="row last first" style="width: 567px;"><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Perfil Corporativo</a>
+                            <ul>
+                                <li><a href="perfil-corporativo">Sobre Camuzzi</a></li>
+                                <li><a href="#">Accionistas</a></li>
+                                <li><a href="#">Directorio</a></li>
+                                <li><a href="perfil-corporativo-nuestra-industria">Nuestra industria</a></li>
+                                <li><a href="perfil-corporativo-historia-del-gas-natural">Historia del Gas Natural</a></li>
+                            </ul>
+
+
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Recursos Humanos</a>
+                            <ul>
+                                <li><a href="recursos-humanos">Bienvenido</a></li>
+                                <li><a href="recursos-humanos-ingreso">Forme parte de nuestro equipo</a></li>
+                            </ul>
+
+                        </li><li class="mega-unit mega-hdr">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Relación con Inversores</a>
+
+                            <ul>
+
+                                <li><a href="relacion-con-inversores-informacion-economica">Info económica financiera</a></li>
+                                <li><a href="relacion-con-inversores-estados-contables.php">Memorias y Estados Contables</a></li>
+                                <li><a href="relacion-con-inversores-cotizaciones">Cotizaciones</a></li>
+                                <li><a href="relacion-con-inversores-preguntas">Preguntas Frecuentes</a></li>
+                                <li><a href="relacion-con-inversores-contactos">Contáctenos</a></li>
+                            </ul>
+
+
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Camuzzi y la Comunidad</a>
+                            <ul>
+                                <li><a href="comunidad">Nuestro compromiso</a></li>
+                                <!--<li><a href="comunidad-programa-de-voluntarios">Programa Voluntarios de Camuzzi</a></li>
+                                <li><a href="comunidad-jornada-prevencion">Jornadas de prevención</a></li>
+                                <li><a href="comunidad-campania-de-reciclaje">Campañas de reciclaje</a></li>-->
+                            </ul>
+
+                        </li><li class="mega-unit mega-hdr last">
+                            <a href="#" class="mega-hdr-a" style="height: 16px;">Comunicación y Prensa</a>
+                            <ul>
+                                <li><a href="comunicacion-y-prensa-comunicados">Comunicados</a></li>
+                                <li><a href="comunicacion-y-prensa-documentos.php">Documentos de interés</a></li>
+                                <li><a href="comunicacion-y-prensa-medios">Imágenes y medios</a></li>
+                                <li><a href="comunicacion-y-prensa-links">Links de interés</a></li>
+                                <li><a href="comunicacion-y-prensa-contactenos">Contáctenos</a></li>
+                            </ul>
+
+
+                            <a href="comunidad" class="mega-hdr-a" style="height: 16px;">Obras</a>
+                            <ul>
+                                <li><a href="concurso-de-obras">Concurso de Obras</a></li>
+                                <li><a href="info-contratistas">Info Contratistas</a></li>
+                            </ul>
+
+                        </li></div>
+
+                        
+
+                        
+
+
+                    </ul></div>
+                </li>
+
+            </ul>
+
+            </div>
+
+            <div id="atencion">
+
+                <p>ATENCIÓN AL CLIENTE</p>
+
+                0810-555-3698
+
+            </div>
+                <a href="http://camuzzigas.com/seguridad-y-medio-ambiente-no-corras-riesgos" class="Menubanner"><img src="img/home_banners/no-COrras-riesgos.jpg" border="0"></a>
+
+                <a href="http://www.jus.gob.ar/datos-personales.aspx/" target="_blank" class="Menubanner"><img src="img/home_banners/banner_PDP_small.jpg" border="0"></a>
+
+                <a href="http://www.camuzzigas.com/notificacion-judicial-recibida" target="_blank" class="Menubanner"><img src="img/home_banners/notificacion_judicial.png" border="0"></a>
+        </div>
+                <div id="sectionContent">
+                    <div class="banner"><img src="img/banners/nuevos-cuadros-tarifarios.jpg" alt="banner"></div>                    <div class="text">
+<h1>Nuevos cuadros tarifarios</h1>
+<br>
+	<!--div class="grey_box">Estamos actualizando la sección</div-->
+
+<p>Desde el 1° abril de 2017 rigen nuevos valores tarifarios para usuarios residenciales, comerciales, PyMEs y estaciones de GNC de todo el país.</p>
+
+<p style="line-height: 20px">
+<strong>Para ver los cuadros tarifarios vigentes, haga <a href="servicio-al-cliente-tarifas-vigentes.php" target="_blank">click aquí</a>.</strong>
+</p>
+
+<br>
+
+<h1>Bonificación por ahorro y límites de consumo</h1>
+<p>La normativa dispone incentivos al ahorro con el fin de realizar un consumo responsable del gas natural. Así, todos los usuarios que reduzcan en un 15% o más su consumo con respecto al mismo período del año 2015 tendrán una significativa reducción en el precio del m3 de gas. Una disminución del consumo podrá significar también la recategorización del usuario, por lo que incluso podrá percibir valores inferiores a los de su categoría actual. La categoría de un usuario es definida por sus niveles de consumo anual, medidos a lo largo de 6 bimestres móviles.</p>
+
+<p><strong>Estas son las bonificaciones vigentes:</strong></p>
+<ul>
+	<li style="word-spacing: -2px">Descuento del 50% en el precio del m<sup>3</sup> para los usuarios de las categorías R1 a R2-3</li>
+	<li style="word-spacing: -2px">Descuento del 30% en el precio del m<sup>3</sup> para los usuarios de las categorías R3-1 a R3-3</li>
+	<li style="word-spacing: -2px">Descuento del 20% en el precio del m<sup>3</sup> de gas para los usuarios de la categoría R3-4</li>
+</ul>
+
+<p style="line-height: 20px">
+<strong>Para conocer cuáles son las categorías de clientes, haga <a href="servicio-al-cliente-clientes-residenciales.php" target="_blank">click aquí</a>.</strong><br>
+<strong>Si no sabe qué tipo de cliente es Ud., conozca su factura haciendo <a href="gestion-comercial-conozca-su-factura.php" target="_blank">click aquí</a>.</strong><br>
+<strong>Para saber cómo hacer un uso responsable del gas natural, haga <a href="http://camuzzigas.com/seguridad-y-medio-ambiente-uso-racional" target="_blank">click aquí</a>.</strong>
+</p>
+
+<p>Es importante destacar que continúan vigentes los topes de incremento sobre las facturas a emitirse por los consumos realizados a partir de la entrada en vigencia de estos nuevos valores tarifarios. En este marco, se ha dispuesto que el monto total -impuestos incluidos- de las facturas a emitirse a partir del 1º de abril, no podrá superar el monto máximo que resulte de aplicar los porcentajes que seguidamente se detallan, a la factura con impuestos incluidos emitida al mismo usuario y en igual período del año anterior. Dichos topes son:</p>
+
+<ul>
+	<li>Usuarios R1, R21, R22 y R23: 300%</li>
+	<li>Usuarios R31 R32 y R33: 350%</li>
+	<li>Usuarios R34: 400%</li>
+	<li>Usuarios SGP: 500%</li>
+</ul>
+
+<p>Los topes de incremento sobre los montos finales facturados se aplicarán siempre que el monto total de la factura supere la suma de doscientos cincuenta pesos ($250).</p>
+
+<br>
+
+<h1>Opción de pago mensual</h1>
+<p>En cumplimiento a lo dispuesto por el ENARGAS y el Ministerio de Energía y Minería de la Nación, para el cobro de las facturas de servicio emitidas en forma bimestral, se ha posibilitado la opción de pago mensual de las mismas, mediante la incorporación de 2 cupones de pago equivalentes cada uno de ellos al 50% del importe total de la factura, con fechas de vencimientos distantes 30 días uno de otro.</p>
+
+<br><br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="sectionFooter">
+            <a href="http://qr.afip.gob.ar/?qr=OoUHa7TWCRFBVOtEvWDGhw,," target="_F960AFIPInfo" class="qr">
+                <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="50">
+                <br>Camuzzi Gas<br>Pampeana</a>
+
+        <a class="qr" href="http://qr.afip.gob.ar/?qr=qJNPXHJkqfoK8z6YSRg7Lg,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" width="50"><br>Camuzzi Gas<br>del Sur</a>
+            <span>Av. Alicia Moreau de Justo 240 piso 3<br>C1107AAF - Buenos Aires - Argentina <br>Tel. 54-11-5776-7000 - Fax. 54-11-5776-7140</span>
+            <img src="img/logo_footer.gif" alt="Camuzzi Gas Pampeana - Camuzzi Gas del Sur">
+        </div>
+    
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        try
+        {
+            var pageTracker = _gat._getTracker("UA-9551836-9");
+            pageTracker._trackPageview();
+        }
+        catch(err) {}
+    </script>
+
+</body>
