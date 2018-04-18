@@ -1,4 +1,6 @@
 https://www.google.com/search?q=www.lavoz.com.ar&tbs=cdr:1,cd_min:4/18/2018,cd_max:4/18/2018&tbm=nws&start=0
+Google site:lavoz.com.ar
+
 
 rdeteccion de variacion sectores economicos por cheques rechazados y evolucion temporal
 relacionar estos comportamientos con periodos economicos, movimientos politicos etc.
