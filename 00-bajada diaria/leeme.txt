@@ -1,5 +1,0 @@
-en este script se realiza la bajada pegandole a la API desarrollada en 
-
-https://github.com/laiunce/codigos/tree/master/api_url_texto
-
-la idea es tomar una busqueda y realizar una bajada automatica de las palabras por pagina web durante los dias en la busqueda
